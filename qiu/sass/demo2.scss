@@ -1,0 +1,16 @@
+@mixin asd($width,$height,$classname,$bg,$p){
+	#{$p}:$width;
+	height:$height;
+	.#{$classname}{
+		color:#{$bg};
+	}
+	##{$classname}{
+		color:red;
+	}
+	#{$classname}{
+		color:red;
+	}
+}
+div{
+	@include asd(12px, 12px,p,red,padding);
+}	

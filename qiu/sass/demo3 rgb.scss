@@ -1,0 +1,73 @@
+@charset "UTF-8";
+body{
+	$color:rgb(222,22,2);
+	color:$color;
+	background-color:rgba($color,1);
+}
+// 加
+.box{
+	width:20px + 30px;
+}
+// 减
+$full-width:960px;
+$sidebar-width:200px;
+
+.box1{
+	width:$full-width - $sidebar-width;
+}
+// 除
+.box1{
+	width:(100px/2);
+	width:100px*10;
+	z-index:str-length("aaaaa");
+	z-index:str-index("asdfgh",f);
+}
+/* */
+$Swidth:600px;
+@if $Swidth > 500px{
+	div{
+		color:red;
+	}
+}
+@else if $Swidth >400px{
+	div{
+		color:blue;
+	}
+}
+@else{
+	div{
+		color:green;
+	}
+}
+@function double($a){
+	@return $a * 2;
+}
+/*  */
+@for $i from 1 to 5 {
+	.span#{$i}{
+		width:20px * $i;
+		height:20px * double($i);
+	}
+}
+/*  */
+
+
+div{
+	width:double(2px);
+}
+/*  */
+$x:6;
+@while $x >0{
+	p#{$x}{
+		width:10px * $x;
+	}
+	$x:$x - 2;
+} 
+/* 
+ */
+$k:1;
+@each $c in red blue yellow{
+	.box-#{$c}{
+		background:$c;
+	}
+}

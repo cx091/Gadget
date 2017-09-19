@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* 呵呵 */
+div {
+  width: 34px;
+  height: 24px;
+  background: red;
+  padding: 1px 2px;
+}
+
+.box, .alert {
+  background-color: red;
+  width: 34px;
+}
+.box div, .alert div {
+  width: 1px;
+}
+.box:before, .alert:before {
+  color: red;
+}
+.box .content, .alert .content {
+  width: 12px;
+}
+.box a :hover, .alert a :hover {
+  width: 12px;
+}
+
+.alert {
+  width: 24px;
+}
+
+.alert {
+  color: red;
+  background: 1px solid #fff;
+}
+
+.box, .alert {
+  -webkit-border-radius: 3px 30px 4px 4px;
+  -moz-border-radius: 3px 30px 4px 4px;
+  -o-border-radius: 3px 30px 4px 4px;
+  -ms-border-radius: 3px 30px 4px 4px;
+  border-radius: 3px 30px 4px 4px;
+}
+
+/*# sourceMappingURL=demo1.css.map */
