@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>concern</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css"/>
+		<script src="assets/js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/zepto.tap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			@font-face {
+				font-family: 'iconfont';
+			    src:  url('assets/font/iconfont.woff') format('woff'), 
+			    url('assets/font/iconfont.ttf') format('truetype'), 
+			    url('assets/font/iconfont.svg#iconfont') format('svg');
+			}
+			.iconfont{
+			    font-family:"iconfont" !important;
+			    font-size:0.16rem;font-style:normal;
+			    -webkit-font-smoothing: antialiased;
+			    -webkit-text-stroke-width: 0.002rem;
+			    -moz-osx-font-smoothing: grayscale;
+			    }
+			.icon{
+				  font-size: 0.42rem;
+				  line-height: 1rem;
+				  color:#333;
+				  -webkit-transition: font-size 0.25s ease-out 0s;
+				  -moz-transition: font-size 0.25s ease-out 0s;
+				  transition: font-size 0.25s ease-out 0s;
+				}
+				
+				.icon-index:before { content: "\e6bb"; }
+				.icon-search:before { content: "\e65c"; }
+				.icon-camera:before { content: "\e664"; }
+				.icon-my:before { content: "\e735"; }
+				.icon-exit:before { content: "\e603"; }
+				
+			body{
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				flex-direction: column;
+				background: #f1f1f1;
+			}
+			.header{
+				position: fixed;
+				left: 0;
+				right: 0;
+				height: .88rem;
+			}
+			.header_top{
+				width: 100%;
+				height: .88rem;
+				background: #0dc441;
+				overflow: hidden;
+			}
+			.header_list{
+				width: 2.35rem;
+				height: .48rem;
+				margin: .21rem auto .19rem auto;
+				border-radius:1rem ;
+				background:rgba(100,255,255,0.5);
+				
+				overflow: hidden;
+				z-index: 99;
+			}
+			.header_list li{
+				display: block;
+				font-style: normal;
+				float: left;
+				width: 50%;
+				height: .48rem;
+				text-align: center;
+				line-height: .48rem;
+				color: #fff;
+				font-size: .24rem;
+				z-index: 100;
+			}
+			.header_list li:nth-of-type(1){
+				background:rgba(61,208,103,0.5);
+			}
+			.header_list li:nth-of-type(2){
+				
+				background:rgba(100,217,133,0.5);
+			}
+			.footer ~ .section{
+				padding-bottom: .87rem;
+			}
+			.header ~ .section{
+				padding-top: .88rem;
+			}
+			.section{				
+				-webkit-flex:1;flex:1;
+				overflow-y: auto;	
+				-webkit-overflow-scrolling: touch;
+				padding-top: .88rem;			
+			}
+			.section .list{
+				width: 100%;
+				height: 7.74rem;
+				border-bottom: .01rem solid rgba(203,215,204,0.5);
+				margin-bottom: .1rem;
+				background: #fff;
+			}
+			.section .list .list_top{
+				width: 100%;
+				height: 1.41rem;
+			}
+			.section .list .list_top div{
+				float: left;
+			}
+			.section .list .list_top div:nth-of-type(1){
+				width:1.18rem;
+				height: 1.41rem;
+			}
+			
+			.section .list .list_top div:nth-of-type(2){
+				width:3.81rem;
+				height: .99rem;
+				margin-top: .18rem;
+				margin-bottom: .24rem;
+			}
+			.nameCon p:nth-of-type(1){
+				height: .52rem;
+				line-height: .52rem;
+				font-size: .28rem;
+				margin-left: .19rem;
+			}
+			.nameCon p:nth-of-type(2){
+				height: .47rem;
+				line-height: .47rem;
+				font-size: .24rem;
+				margin-left: .19rem;
+				color: #999999;
+			}
+			.section .list .list_top div:nth-of-type(1) img{
+				width:.95rem;
+				height: .95rem;
+				margin: .21rem 0 .25rem .21rem;
+			}
+			.section .list .list_top div:nth-of-type(3){
+				width:1.4rem;
+				height:1.41rem;
+			}
+			.zan i{
+				float: left;
+			}
+			.zan i:nth-of-type(1){
+				display: block;
+				font-size:.24rem;
+				width:.83rem;
+				height:.19rem;
+				margin-top: .28rem;
+				color: #cccccc;
+			}
+			.zan i:nth-of-type(2){
+				display: block;
+				font-size:.24rem;
+				width:.24rem;
+				height:.23rem;
+				margin-top: .28rem;
+				margin-left: .12rem;
+				
+			}
+			.section .list .list_bottom p{
+				height: .65rem;
+				margin-left: .42rem;
+				line-height: .65rem;
+				font-size:.24rem;
+			}
+			.footer{
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: .87rem;
+				border-top: .01rem solid rgba(203,215,204,0.5);
+				z-index: 99;
+				background: #fff;
+			}
+			.footer ul{
+				display: -webkit-flex;
+				display: flex;
+				height: 100%;
+				width: 100%;
+				-webkit-flex-direction: row;
+				flex-direction: row;
+				overflow: hidden;
+			}
+			.footer ul li{
+				-webkit-flex:1;
+				flex:1;
+				float: left;
+			}
+			.footer ul li i{
+				color: #d6d6d6;
+			}
+			.footer ul .active i{
+				color:#0dc441;
+			}
+			.footer ul li i:nth-of-type(1){
+				display: block;
+				width:80% ;
+				height:.55rem;
+				line-height: .55rem;
+				text-align: center;
+				margin: 0 auto;
+			}
+			.footer ul li i:nth-of-type(2){
+				display: block;
+				width:100% ;
+				height:.25rem;
+				font-size: .24rem;
+				line-height: .25rem;
+				text-align: center;
+				margin: 0 auto;
+			}
+			.footer .border{
+				position: absolute;
+				bottom: 0;
+				left: 42.6%;
+				width: 1rem;
+				height:1rem;
+				background: #fff;
+				border: .01rem solid rgba(203,215,204,0.5);
+				border-radius: 100%;
+			}
+			.footer .border i{
+				display: block;
+				width:100% ;
+				height:100%;
+				font-size: .54rem;
+				text-align: center;
+				color: #d6d6d6;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<header class="header">
+			<div class="header_top">
+				<ul class="header_list">
+					<li>热点</li>
+					<li>关注</li>
+				</ul>
+			</div>
+		</header>
+		<footer class="footer">
+			<ul>
+				<li class="active">
+					<i class="icon iconfont">&#xe6bb;</i>
+					<i>首页</i>
+				</li>
+				<li>
+					<i class="icon iconfont">&#xe65c;</i>
+					<i>发现</i>
+				</li>
+				<li>
+					<i class="icon iconfont">&#xe664;</i>
+				</li>
+				<li>
+					<i class="icon iconfont">&#xe735;</i>
+					<i>我的</i>
+				</li>
+				<li>
+					<i class="icon iconfont">&#xe603;</i>
+					<i>退出</i>
+				</li>
+			</ul>
+			<div class="border">
+				<i class="icon iconfont">&#xe664;</i>
+			</div>
+		</footer>
+		<section class="section">
+			<div class="list">
+				<div class="list_top">
+					<div><img src="assets/img/img3.png"/></div>
+					<div class="nameCon">
+						<p>我叫小萌</p>
+						<p>我是小萌我怕谁，哈哈哈！！</p>
+					</div>
+					<div class="zan"><i>3456782</i><i><img src="assets/img/zan.png"/></i></div>
+				</div>
+				<div class="list_img"><img src="assets/img/img4.png"/></div>
+				<div class="list_bottom">
+					<p>小丸子啊小丸子</p>
+				</div>
+			</div>
+			<div class="list">
+				<div class="list_top">
+					<div><img src="assets/img/img3.png"/></div>
+					<div class="nameCon">
+						<p>我叫小萌</p>
+						<p>我是小萌我怕谁，哈哈哈！！</p>
+					</div>
+					<div class="zan"><i>3456782</i><i><img src="assets/img/zan.png"/></i></div>
+				</div>
+				<div class="list_img"><img src="assets/img/img4.png"/></div>
+				<div class="list_bottom">
+					<p>小丸子啊小丸子</p>
+				</div>
+			</div>
+			<div class="list">
+				<div class="list_top">
+					<div><img src="assets/img/img3.png"/></div>
+					<div class="nameCon">
+						<p>我叫小萌</p>
+						<p>我是小萌我怕谁，哈哈哈！！</p>
+					</div>
+					<div class="zan"><i>3456782</i><i><img src="assets/img/zan.png"/></i></div>
+				</div>
+				<div class="list_img"><img src="assets/img/img4.png"/></div>
+				<div class="list_bottom">
+					<p>小丸子啊小丸子</p>
+				</div>
+			</div>
+			<div class="list" style="margin-bottom: 0rem;">
+				<div class="list_top">
+					<div><img src="assets/img/img3.png"/></div>
+					<div class="nameCon">
+						<p>我叫小萌</p>
+						<p>我是小萌我怕谁，哈哈哈！！</p>
+					</div>
+					<div class="zan"><i>3456782</i><i><img src="assets/img/zan.png"/></i></div>
+				</div>
+				<div class="list_img"><img src="assets/img/img4.png"/></div>
+				<div class="list_bottom">
+					<p>小丸子啊小丸子</p>
+				</div>
+			</div>
+			
+		</section>		
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-j计算页面停留时间</title>
+</head>
+<body>
+	<div class="container">
+		<div class="sysTime">系统当前时间：<span id="sysTime"></span></div>
+		<div class="staTime">页面时间：<span id="staTime"></span></div>
+		<div class="inpText">请输入字符：<input type="text" id="btn1"></div>
+		<div class="cuteA" id="cuteA">执行</div>
+		<p id="sT"></p>
+	</div>
+</body>
+<script>
+	var oDate = new Date();
+	var time = null;
+	var sysTime = document.getElementById("sysTime");
+	var cuteA = document.getElementById("cuteA");  // 获取Ascii
+	var st = document.getElementById("sT");
+	var oBtn = document.getElementById("btn1"); //目标输入框
+	var sysShow = oDate.getFullYear() + "-" + (oDate.getMonth()+1) + "-" + oDate.getDate() + " " + oDate.getHours() + ":" + oDate.getMinutes()+":"+ oDate.getSeconds();
+	    sysTime.innerHTML = sysShow;
+	    time = setInterval(function(){
+	    	oDate = new Date();
+	    	sysShow = oDate.getFullYear() + "-" + (oDate.getMonth()+1) + "-" + oDate.getDate() + " " + oDate.getHours() + ":" + oDate.getMinutes()+":"+ oDate.getSeconds();
+	    		sysTime.innerHTML = sysShow;
+	    },1000);
+
+	    // 最后一个功能：
+	    cuteA.onclick = function(){
+	    	st.innerHTML = "输入的文本为："+ oBtn.value + "ASCII码为"+oBtn.value.charCodeAt(0); 
+	    }
+</script>
+</html>

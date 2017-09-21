@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>      
+</head>
+<link rel="stylesheet" type="text/css" href="css/stlye.css">
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}  
+div{
+	width: 33.3%;
+	height:400px;
+	overflow: hidden;
+	float: left;
+	opacity: 1;
+	position: relative;
+	
+}
+div:hover img{
+	transform: translateX(-10px);
+	opacity: 0.5;
+	
+}
+img{
+	opacity: 1;
+	transition: 0.5s;
+}
+
+h2{
+	font-size: 32px;
+	color: #fff;
+	font-weight: 100;
+	transition: 0.5s;
+}
+p{
+	font-size: 22px;
+	color:white;
+	transition: 0.5s;
+}
+span{
+	color: #000;
+	background: white;
+	font-size: 15px;
+	transition: 0.5s;
+}
+/*effect1*/
+.effect1 h2{
+	position: absolute;
+	left: 30px;
+	bottom: 60px;
+	
+}	
+.effect1 p{
+	position: relative;
+	left:30px;
+	bottom:-45px;
+	color: white;
+	
+}
+.effect1:hover h2{
+	transform: translateY(-20px);
+	
+}
+.effect1:hover p{
+	transform: translateY(-90px);
+	
+}
+/*efftct2*/
+.effect2 h2{
+	position: absolute;
+	left: 30px;
+	top:60px;
+}
+.effect2 span[class="span1"]{
+	
+	position: absolute;
+	left: -220px;
+	top: 140px;
+	
+}
+.effect2 span[class|="span2"]{
+	
+	position: absolute;
+	left: -220px;
+	top: 170px;
+	transition-delay: 0.2s;
+}
+.effect2 span[class^="span3"]{
+	position: absolute;
+	left: -220px;
+	top: 200px;
+	transition-delay: 0.4s;
+}
+.effect2:hover h2{
+	transform:translateY(-10px);
+}
+.effect2:hover .span1{
+transform:translateX(250px);
+
+transition:.5s ease-out .1s;
+}
+.effect2:hover .span2{
+transform:translateX(250px);
+
+}
+
+.effect2:hover .span3{
+transform:translateX(250px);
+
+}
+/*effect3*/
+.effect3 span{
+	position: absolute;
+	left:; 
+	top:;
+	font-size: 15px;
+	color: #000;
+	background: #fff;
+	width: 100%;
+	height: 70px;
+
+}
+.effect3 h2{
+	position: absolute;
+	left: 30px;
+	top:100px;
+	
+}
+.effect3:hover h2{
+	transform: translateY(-20px);
+}
+.effect3:hover .span1{
+	transform: translateY(-50px);
+}
+/*effect4*/
+.effect4 h2{
+	position: absolute;
+	left: 30px;
+	top: 80px;
+	opacity: 0;
+
+}
+.effect4:hover h2{
+	transform: translateY(-20px);
+	opacity: 1;
+}
+.effect4 p{
+	color: black;
+	font-size:22px; 
+	z-index: 99;
+}
+.effect4 .info1{
+	position: absolute;
+	right: 100px;
+	bottom: -30px;
+	transition-delay: 0s;
+
+}
+.effect4 .info2{
+	position: absolute;
+	right: 30px;
+	bottom: -30px;
+}
+.effect4:hover p{
+	transform: translateY(-60px);
+
+	
+}
+.effect4:hover .info1{
+	-webkit-transition-delay:0.1s;
+}
+.effect4 div{
+	position: absolute;
+
+	bottom: -400px;
+	left: 0px;
+	width: 600px;
+	height: 400px;
+	transform-origin:0 0;
+	background: white;
+	z-index: 98;
+	transition: 0.5s;
+}
+.effect4:hover div{
+	transform:rotate(-10deg);
+}
+.effect5 h2{
+	position: absolute;
+	left: 30px;
+	top: 60px;
+
+}
+.effect5 p{
+	position:absolute;
+	left:80px;
+	top: 180px;
+	font-size: 18px;
+}
+.effect5:hover h2{
+	transform: translateX(40px);
+}
+.effect5:hover p{
+	transform: translateY(-20px);
+}
+/*.effect5 div{
+	border: 1px solid #000;
+	position: absolute;
+	top: -85%;
+	left: -85%;
+	width: 70%;	
+	height: 70%;
+	transition: 1s;
+	transform-origin: 0 0;
+	transform
+}
+.effect5:hover div{
+	transform: translate(140% ,140%) rotate(720deg);
+}*/
+.effect5{
+/*	overflow: visible;*/
+}
+.effect5 div{
+	position: absolute;
+	left: 15%;
+	top: 15%;
+	width: 70%;
+	height: 70%;
+	border: 1px solid #000;
+	transform-origin: 0 0;
+	transform: translateY(-400px) rotate(0deg);
+	transition: 0.5s 0.1s;
+}
+.effect5:hover div{
+	transform: translateY(0px) rotate(360deg);
+}
+/*effect6*/
+.effect6 h2{
+	position: absolute;
+	top:30px;
+	left:30px;
+	width: 50%;
+	height: 10%;
+	color: white;
+	transform: skew(90deg);
+	
+}
+.effect6 p{
+	position: absolute;
+left: 50px;
+top: 80px;
+transform: skew(90deg);
+}
+.effect6:hover h2{
+	transform: skew(0deg);
+}
+.effect6:hover p{
+	transform: skew(0deg);
+}
+.effect7 h2{
+	position: absolute;
+	left: 80px;
+	top: 90px;
+}
+.effect7 p{
+	position: absolute;
+	left:70px;
+	top: 200px;
+}
+.effect7 div{
+	position: absolute;
+	left:15%;
+	top: 15%;
+	width: 70%;
+	height: 70%;
+	border: 2px solid #fff;
+	transition: .5s;
+}
+.effect7:hover h2{
+	transform: scale(0.8);
+}
+.effect7:hover p{
+	transform: scale(0.8);
+}
+.effect7:hover div{
+	transform: scale(0.8);
+}
+.effect8 h2{
+	position: absolute;
+	left: 80px;
+	top: 60px;
+}
+.effect8 p{
+	position: absolute;
+	left:70px;
+	top: 100px;
+}
+
+
+.effect8 .divY{
+	position: absolute;
+	left: 15%;
+	top: 10%;
+	width: 70%;
+	height: 80%;
+	border: 1px solid #fff;
+	border-top: none;
+	border-bottom: none;
+	transform: scaleY(0);
+	transition: 0.5s;
+}
+.effect8:hover .divY{
+	transform: scaleY(1);
+	
+}
+.effect8:hover .divX{
+	transform: scaleX(1);
+	
+}
+.effect8 .divX{
+	position: absolute;
+	left: 10%;
+	top: 15%;
+	width: 80%;
+	height: 70%;
+	border: 1px solid #fff;
+	border-left: none;
+	border-right: none;
+	transform: scaleX(0);
+	transition: 0.5s;
+}
+/*.effect8 .div1{
+	position: absolute;
+	left:15%;
+	top: 15%;
+	width: 70%;
+	height: 70%;
+	border: 1px solid #fff;
+}*/
+/*.effect8 .div2{
+	position: absolute;
+	left:15%;
+	top: 45%;
+	width: 0;
+	height: 10%;
+	border-left: 1px solid #fff;
+	
+}
+.effect8 div{
+	transition: 2s;
+	opacity: 0;
+	
+}
+.effect8:hover div{
+	
+	opacity: 1;
+	
+}
+.effect8:hover .div2{
+	transform: scale(1,8);
+}
+.effect8 .div3{
+	position: absolute;
+	left:45%;
+	top: 15%;
+	width: 10%;
+	height: 0;
+	border-top: 1px solid #fff;
+}
+.effect8:hover .div3{
+	transform: scale(8,1);
+}
+.effect8 .div4{
+	position: absolute;
+	left:85%;
+	top: 45%;
+	width: 0;
+	height: 10%;
+	border-left: 1px solid #fff;
+}
+.effect8:hover .div4{
+	transform: scale(1,8);
+}
+.effect8 .div5{
+	position: absolute;
+	left:45%;
+	top: 85%;
+	width: 10%;
+	height: 0;
+	border-top: 1px solid #fff;
+}
+.effect8:hover .div5{
+	transform: scale(8,1);
+}*/
+</style>
+<body>
+	<div class="effect1">
+		<img src="img/pic1.jpg" alt="">
+		<h2>平移动画</h2>
+		<p>最简单的平移动画</p>
+
+	</div>
+	<div class="effect2">
+		<img src="img/pic2.jpg" alt="">
+		<h2>平移动画</h2>
+		<span class="span1">&nbsp;多条图片简介文字&nbsp;</span>
+		<span class="span2">&nbsp;逐一飞入动画&nbsp;</span>
+		<span class="span3">&nbsp;利用动画延迟打到效果&nbsp;</span>
+	</div>
+	<div class="effect3">
+		<img src="img/pic3.jpg" alt="">
+		<h2>底部划出动画</h2>
+		<span class="span1">translate属性可以制作多种动画，要分割简单的位置他一定可以制作出多种效果，重要看制作是梦能付才懂想象力</span>
+	</div>
+	<div class="effect4">
+
+		<img src="img/pic4.jpg" alt="">
+		<h2>利用旋转显示额外信息</h2>
+		<p class="info1">info1</p>
+		<p class="info2">info2</p>
+		<div></div>
+	</div>
+	<div class="effect5">
+		<img src="img/pic5.jpg" alt="">
+		<h2>旋转飞入飞出</h2>
+		<p>通过旋转和唯一制作飞入飞出效果</p>
+		<div></div>
+	</div>
+	<div class="effect6">
+		<img src="img/pic6.jpg" alt="">
+		<h2>扭曲方法</h2>
+		<p>通过扭曲和移位，制作飞入的效果<br>
+		 扭曲角度达到90度就看不见了</p>
+	</div>
+	<div class="effect7">
+		<img src="img/pic7.jpg" alt="">
+		<h2>简单的缩放效果</h2>
+		<p>通过简单的缩放到达效果</p>
+		<div></div>
+	</div>
+	<div class="effect8">
+		<img src="img/pic8.jpg" alt="">
+		<h2>绘制线条效果</h2>
+		<p>通过缩放属性绘制边框线条</p>
+		<!-- <div class="div1"></div>
+		<div class="div2"></div> -->
+		<!-- <div class="div3"></div>
+		<div class="div4"></div>
+		<div class="div5"></div> -->
+		<div class="divX"></div>
+		<div class="divY"></div>
+	</div>
+	<div class="effect9">
+		<img src="img/pic9.jpg" alt="">
+		<span class="top_left">~功夫</span>
+		<span class="top_right">熊猫~</span>
+		<!-- <span class="top1"></span> -->
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>
+		<div class="div5"></div>
+		<div class="div6"></div>
+		<div class="div7"></div>
+		<div class="div8"></div>
+		<div class="div9"></div>
+		<div class="div10"></div>
+	</div>
+	
+	
+</body>
+</html>

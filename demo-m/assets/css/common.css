@@ -1,0 +1,124 @@
+@font-face {
+	font-family: 'iconfont';
+	src:  url('assets/font/iconfont.woff') format('woff'), 
+	url('assets/font/iconfont.ttf') format('truetype'), 
+	url('assets/font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:0.16rem;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.002rem;
+    -moz-osx-font-smoothing: grayscale;
+    }
+.icon{
+	  font-size: 0.42rem;
+	  line-height: 1rem;
+	  color:#333;
+	  -webkit-transition: font-size 0.25s ease-out 0s;
+	  -moz-transition: font-size 0.25s ease-out 0s;
+	  transition: font-size 0.25s ease-out 0s;
+	}
+	
+	.icon-index:before { content: "\e6bb"; }
+	.icon-search:before { content: "\e65c"; }
+	.icon-camera:before { content: "\e664"; }
+	.icon-my:before { content: "\e735"; }
+	.icon-exit:before { content: "\e603"; }
+	
+body{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-overflow-scrolling: touch
+}
+.header{
+	position: fixed;
+	left: 0;
+	right: 0;
+	height: 1.58rem;
+}
+.header_top{
+	width: 100%;
+	height: .88rem;
+	background: #0dc441;
+	overflow: hidden;
+}
+.header_list{
+	width: 2.35rem;
+	height: .48rem;
+	margin: .21rem auto .19rem auto;
+	border-radius:1rem ;
+	background:rgba(100,255,255,0.5);
+	
+	overflow: hidden;
+	z-index: 99;
+}
+
+.footer{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: .87rem;
+	border-top: .01rem solid rgba(203,215,204,0.5);
+	z-index: 99;
+	background: #fff;
+}
+.footer ul{
+	display: -webkit-flex;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	overflow: hidden;
+}
+.footer ul li{
+	-webkit-flex:1;
+	flex:1;
+	float: left;
+}
+.footer ul li i{
+	color: #d6d6d6;
+}
+.footer ul .active i{
+	color:#0dc441;
+}
+.footer ul li i:nth-of-type(1){
+	display: block;
+	width:80% ;
+	height:.55rem;
+	line-height: .55rem;
+	text-align: center;
+	margin: 0 auto;
+}
+.footer ul li i:nth-of-type(2){
+	display: block;
+	width:100% ;
+	height:.25rem;
+	font-size: .24rem;
+	line-height: .25rem;
+	text-align: center;
+	margin: 0 auto;
+}
+.footer .border{
+	position: absolute;
+	bottom: 0;
+	left: 42.6%;
+	width: 1rem;
+	height:1rem;
+	background: #fff;
+	border: .01rem solid rgba(203,215,204,0.5);
+	border-radius: 100%;
+}
+.footer .border i{
+	display: block;
+	width:100% ;
+	height:100%;
+	font-size: .54rem;
+	text-align: center;
+	color: #d6d6d6;
+	margin: 0 auto;
+}

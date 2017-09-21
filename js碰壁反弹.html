@@ -1,0 +1,145 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-碰壁反弹</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box{
+			width: 600px;
+			height: 400px;
+			border: 10px solid black;
+			position: relative;
+			margin: 50px auto;
+		}
+		.cute{
+			width: 80px;
+			height: 80px;
+			background:red;
+			border-radius: 50%;
+			position: absolute;  /*定位，运动*/
+			left: 0px;
+			top: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="cute" id="cute"></div>
+	</div>
+	<button id="btn1">运动</button>
+</body>
+<script>
+	var box = document.getElementById("box");
+	var cute = document.getElementById("cute");
+	var oBtn = document.getElementById("btn1");
+	var posX = 0;
+	var posY = 0;
+	var time = null;
+	var kx = true; 
+	var kY = true;
+	// offsetLeft 获取 left值（相对于父级有相对定位的边框left值）
+	// offsetWidth, offsetHeight, 指的是元素包含边框的宽高；
+	//  
+	//  clientWidth, clientHeight 指的是元素不包含边框的宽高；
+		oBtn.onclick = function(){
+			//obtn.onclick =function()
+			// 开始运动
+			time = setInterval(move,1);
+			//time= setInterval(move,1);
+		}
+       console.log(box.offsetWidth);
+       console.log(box.clientWidth);
+       // 运动主函数
+		function move(){
+			// if (kx) {
+			// 	posX++;
+			// 	cute.style.left=posX+"px";
+			// 	if (posX>=box.clientWidth-cute.offsetWidth) {
+			// 		kx=false;
+			// 	}
+			// } else {
+			// 	posX--;
+			// 	cute.style.left=posX+"px";
+			// 	if (posX<=0) {
+			// 		kx=true;
+			// 	} 
+			// }
+			if (kx) {
+				posX++;
+				cute.style.left=posX+"px";
+				if (posX>=box.clientWidth-cute.offsetWidth) {
+					kx=false;
+				} 
+			} else {
+				posX--;
+				cute.style.left=posX+"px";
+				if (posX<=0) {
+					kx=true;
+				}
+			}
+			// if (kx) {
+			// 	x++;
+			// 	cute,style.left =x+"px";
+			// 	if (x>=box.clientWidth-cute.offsetWidth) {
+			// 	kx=false}
+			// 	
+
+			// } else {
+			// x--;
+			// cute.style.left=x+“px;
+			// if(x<0){
+			// kx=true;
+			// }
+			// 
+			// }
+			// if(kX){
+			// 	posX++;
+			// 	cute.style.left = posX + 'px';
+				
+			// 	if(posX >= box.clientWidth - cute.offsetWidth){
+			// 		// console.log("到达右边临界值");
+			// 		// posX--; //开关量判断方法 
+			// 		kX = false;
+			// 	}
+			
+			// }
+
+			// else{
+			// 	posX--;
+			// 	cute.style.left = posX + 'px';
+				
+			// 	if(posX <= 0){
+			// 		// console.log("到达右边临界值");
+			// 		// posX--; //开关量判断方法 
+			// 		kX = true;
+			// 	}
+			// }
+
+
+
+			// 垂直方向
+			if(kY){
+				posY++;
+				cute.style.top = posY + 'px';
+				if(posY >= box.clientHeight - cute.offsetHeight){
+					// console.log("到达右边临界值");
+					// posX--; //开关量判断方法 
+					kY = false;
+				}
+			}
+			else{
+				posY--;
+				cute.style.top = posY + 'px';
+				if(posY <= 0){
+					// console.log("到达右边临界值");
+					// posX--; //开关量判断方法 
+					kY = true;
+				}
+			}
+		}
+</script>
+</html>
