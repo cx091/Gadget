@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular2-init</title>
+</head>
+<script type="text/javascript" src="angular.js" ></script>
+<body>
+	<div data-ng-app="" ng-init="name='zhangsan'">
+		<input type="text" data-ng-model="name">
+		<br>
+		输入的内容是：<p data-ng-bind="name"></p>
+		<p>我是表达式：{{name}}</p>
+		<br>
+		{{5+5}}
+		<br>
+		<div ng-init="a=4;b='4'">
+			{{a*b}}
+		</div>
+		<div ng-init="firstName='张三';last='李四'">
+			{{firstName+lastName}}
+		</div>
+		<div ng-init="person={name:'zhangsan',age:30}">
+			{{'姓名：'+person.name+',年龄：'+person.age}}
+		</div>
+		<div ng-init="arr=['one','two','three']">
+			{{arr[2]}}
+		</div>
+	</div>
+</body>
+</html>

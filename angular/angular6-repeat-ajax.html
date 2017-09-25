@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.js"></script>
+</head>
+<style type="text/css">
+	.box{
+		width: 100px;
+		height: 100px;
+		background: red;
+	}
+</style>
+<body ng-app="myapp">
+	<div ng-controller="firstContrl">
+		<div class="box" ng-click="boxAction()">
+			{{name+num}}
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var myapp = angular.module("myapp" ,[]);
+		myapp.controller("firstContrl",["$scope","$timeout","$interval","$http","$location",function($scope,$timeout,$interval,$http,$location){
+			$scope.name="源氏";
+			$scope.num =0 ;
+			$scope.boxAction =function(){
+				this.name ="text";
+				$timeout(function(){
+					$scope.name ="弟弟";
+				},2000);
+				$interval(function(){
+				$scope.num++;
+				},1000);
+			}
+			
+		}])
+</script>
+</html>

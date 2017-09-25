@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular5-compress</title>
+	<script type="text/javascript" src="angular.js"></script>
+</head>
+<body ng-app="my-app">
+	<div ng-controller="firstContrl">
+		{{name}}
+	</div>
+	{{obj}}
+	{{person.name}}
+	
+</body>
+<script type="text/javascript">
+	var myapp= angular.module("my-app" ,[]);
+	myapp.controller("firstContrl",["$scope","$rootScope", function($scope,$rootScope){
+		$scope.name= "hello";
+		$rootScope.obj = "test";
+	}]);
+	
+	myapp.run(["$rootScope" , function($rootScope){
+		$rootScope.person = {
+			name : "zhangsan"
+		};
+	}])
+</script>
+</html>

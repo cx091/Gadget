@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.js"></script>
+</head>
+<body>
+	<div ng-app="myapp">
+		<div ng-controller="firstContrl">
+			<input type="text" ng-model="name">
+			<p ng-bind="name"></p>
+			<div>{{name}}</div>
+			<button ng-click="change()">变蛤蛤</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var myApp = angular.module("myapp" ,[]);
+	 myApp.controller("firstContrl" ,["$scope" , function($scope){
+	 	$scope.name = "习习";
+	 	$scope.change=function(){
+	 		this.name="蛤蛤";
+	 	}
+	 }])
+</script>
+</html>

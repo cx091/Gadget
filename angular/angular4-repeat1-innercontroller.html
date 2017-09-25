@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular.js"></script>
+</head>
+<body>
+	<div ng-app="myapp">
+		<div ng-controller="firstController">
+			{{person.name}}
+			<div ng-controller="secondController">
+				{{person.name}}
+				<br>
+				{{name}}
+				<button ng-click="fun()">有境外恺威苦练</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var myApp=angular.module("myapp" ,[]);
+	myApp.run(["$rootScope" ,function($rootScope){
+		console.log("第一个打印RUN");
+		$rootScope.name="幽静"
+	}])
+	 	myApp.controller("firstController",["$scope","$rootScope",function($scope,$rootScope){
+	 		console.log("第二个跑的");
+	 		$scope.person={
+	 			name:"源氏"
+	 		}
+	 		var fun=function(){
+	 			console.log("看不见");
+	 		}
+	 		$scope.fun = function(){
+	 			$rootScope.name="哟西"
+	 		}
+	 	}])
+	 	myApp.controller("secondController" ,["$scope" ,function($scope){
+	 		console.log("其实你在随后");
+	 		$scope.person ={
+	 			name:"我就是源氏"
+	 		}
+	 	}])
+</script>
+</html>

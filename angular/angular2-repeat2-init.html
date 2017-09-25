@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="angular.js"></script>
+<body>
+<div data-ng-app="" ng-init="name='张三'">
+	<input type="text" data-ng-model="name">
+	<p data-ng-bind="name"></p>
+	{{name}}
+	{{5+4}}
+	<div ng-init="firstNmae='木易';last='诚心'">
+		{{firstName+last}}
+	</div>
+	<div ng-init="person={name:'诚心',age:30}">
+		{{'姓名：'+person.name+"年龄："+person.age}}
+	</div>
+	<div ng-init="arr=['one','two','three']">
+		{{arr[2]}}
+	</div>
+</div>	
+</body>
+</html>

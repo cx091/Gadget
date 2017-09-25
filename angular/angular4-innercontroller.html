@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular4-innercontroller</title>
+</head>
+<script src="angular.js"></script>
+<body>
+	<div ng-app="my-first-app">
+		<div ng-controller="firstController">
+			{{person.name}}
+			<div ng-controller="secondController">
+				<p>我是second</p>
+				{{person.name}}
+				<br>
+				名字：{{name}}
+				<button ng-click="fun()">XX	</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var myApp=angular.module("my-first-app" ,[]);
+	myApp.run(["$rootScope" ,function($rootScope){
+		console.log(3);
+		$rootScope.name="美女！"
+	}])
+	myApp.controller("firstController",["$scope","$rootScope", function($scope, $rootScope){
+		console.log(2);
+		$scope.person = {
+			name : "zhang十八"
+		}
+		var fun =function(){
+			console.log("test")
+		}
+		$scope.fun = function(){
+			$rootScope.name ="hellow world"
+		}
+	}])
+
+	myApp.controller("secondController",["$scope",function($scope){
+		console.log(1);
+		$scope.person ={
+			name : "list"
+		}
+	}])
+
+</script>
+</html>

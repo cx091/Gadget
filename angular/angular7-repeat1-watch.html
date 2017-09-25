@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src=" angular.js"></script>
+</head>
+<body ng-app="my-app">
+	<div ng-controller="firstContrl">
+		<p>单价：<input type="text" ng-model="price"></p>
+		<p>数量：<input type="text" ng-model="count"></p>
+		<p>总价：{{price*count}}/{{fun()}}</p>
+		<p>邮费：{{free}}</p>
+		<p>总计：{{free +price*count}}</p>
+	</div>
+</body>
+<script type="text/javascript">
+	var myapp=angular.module("my-app",[]);
+	myapp.controller("firstContrl", ["$scope","$timeout","$interval",function($scope,$timeout,$interval){
+		$scope.price =50;
+		$scope.count =1;
+		$scope.free =40;
+		$scope.fun = function(){
+			return $scope.price*$scope.count;
+		}
+		$scope.$watch($scope.fun,function(newVal,oldVal){
+			console.log("新值："+newVal+'------'+oldVal);
+			if (newVal>1000) {
+				$scope.free = 0;
+			}else if(newVal > 500){
+				$scope.free = 20;
+			}else{
+				$scope.free= 40;
+			}
+		})
+
+	}])
+</script>
+</html>
