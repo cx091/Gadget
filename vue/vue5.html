@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="myapp">
+			<add-method :a="6" :b="12" v-on:add_event="getAddResult"></add-method>
+			<hr />
+			<h3>{{result1}}</h3>
+		</div>
+		<!--slot插槽-->
+		<div id="myapp3">
+			<say-to pname="koma">
+				还可以
+			</say-to>
+			<say-to pname="mike">
+				还可以
+			</say-to>
+			<say-to pname="john">
+				还可以
+			</say-to>
+		</div>
+		
+		<!--组合slot-->
+		<div id="myapp4">
+			<nba-all-stars c="奥尼尔" pf="加内特">
+				<span slot="sf">皮尔斯</span>
+				<span slot="sg">雷阿伦</span>
+				<span slot="pg">隆多</span>
+			</nba-all-stars>
+		</div>
+	</body>
+	<script src="js/vue.js"></script>
+	<script>
+		Vue.component('nba-all-stars',{
+			props:["c","pf"],
+			template:"<div>"
+			+"<div>中锋：{{c}}</div>"
+			+"<div>大前：{{pf}}</div>"
+			+"<div>小前：<slot name='sf'></slot></div>"
+			+"<div>分位：<slot name='sg'></slot></div>"
+			+"<div>控卫：<slot name='pg'></slot></div>"
+			+"</div>"
+		})
+		var myapp4 = new Vue({
+			el:"#myapp4",
+		})
+		Vue.component("add-method", {
+			props: ["a", "b"],
+			template: '<div><button v-on:click="add">加吧</button></div>',
+			methods: {
+				add: function() {
+					var value = 0;
+					value = this.a + this.b;
+					this.$emit("add_event", {
+						results: value
+					})
+				}
+			}
+		})
+		var myapp = new Vue({
+			el: "#myapp",
+			data: {
+				result1: 0
+			},
+			methods: {
+				getAddResult: function(pval) {
+					this.result1 = pval.results
+				}
+			}
+		})
+		
+		Vue.component("say-to",{
+			props:["pname"],
+			template:"<div>"
+			+"你好,<strong>{{pname}}</strong>"
+			+"</div>"
+		})
+		var myapp3= new Vue({
+			el:"#myapp3"
+		})
+	</script>
+
+</html>

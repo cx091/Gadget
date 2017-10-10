@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--组件-->
+		<div id="myapp">
+			<today-weather></today-weather>
+		</div>
+		<div id="myapp2">
+			<h1>2017年最期待游戏是：</h1>
+			<table border="1">
+				<tr>
+					<td>编号</td>
+					<td>游戏名称</td>
+					
+				</tr>
+				<tr is="my-row1"></tr>
+				<tr is="my-row2"></tr>
+				<tr is="my-row3"></tr>
+			
+				
+			</table>
+			
+		</div>
+		<div id="myapp3">
+			<div>今天的天气是<todays-weather/></div>
+		</div>
+		<div id="myapp4">
+			<h1>你的成绩评价</h1>
+			<test-result  :score="50"></test-result>
+			<test-result  :score="50"></test-result>
+			<test-result  :score="60"></test-result>
+			<test-result  :score="100"></test-result>
+		
+		</div>
+	</body>
+	<script src="js/vue.js"></script>
+	<script type="text/javascript">
+		var WeatherComponent={
+			template:"<div>今天下雨随他去吧！</div>",
+			
+		}
+//		Vue.component("today-weather",{
+//			template:"<div>今天下雨不出去了干什么了看YOUTUBE！</div>"
+//		});
+		var myapp =new Vue({
+			el:"#myapp",
+			components:{
+				"today-weather":WeatherComponent
+			}
+		})
+		Vue.component("my-row1",{
+			template:"<tr><td>(1)</td><td>塞尔达</td></tr>"
+		})
+		Vue.component("my-row2",{
+			template:"<tr><td>(1)</td><td>塞尔达</td></tr>"
+		})
+		Vue.component("my-row3",{
+			template:"<tr><td>(1)</td><td>塞尔达</td></tr>"
+		})
+		var myapp2= new Vue({
+			el:"#myapp2",
+			data:{
+				
+			},
+			methods:{
+				
+			},
+		})
+		
+		Vue.component("todays-weather",{
+			template:"<strong>{{todayWeather}}</strong>",
+			data:function(){
+				return {todayWeather:"雨夹雪"}
+			}
+		})
+		var myapp3 = new Vue({
+			el:"#myapp3",
+		})
+		
+		
+		//数据
+		Vue.component("test-result",{
+			props:["score"],
+			template:"<div><strong>{{score}}分,{{testResult}}</strong></div>",
+			computed:{
+				testResult:function(){
+					var strResult= "";
+					if(this.score<60){
+						strResult = "不及格";
+					}
+					else if(this.score<90){
+							strResult = "中等生";
+					}
+					else if(this.score<=100){
+						strResult = "优等生";
+					}
+			
+					return strResult
+				}
+			}
+		})
+		var myapp4 =new Vue({
+			el:"#myapp4",
+		})
+	</script>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="myapp">
+			<h1>对象迭代</h1>
+			<div v-for="(value,key) in mygame">
+				{{key}}:{{value}}
+			</div>
+		</div>
+
+		<div id="myapp1">
+			<h1>时间处理器</h1>
+			<input id="txtName" v-on:keyup="txtKeyup($event)" />
+			<button id="btnOK" v-on:click="btnClick($event)">OK</button>
+		</div>
+		<div id="myapp2">
+			<h1>表单控件绑定</h1>
+			<input type="text" v-model="message" placeholder="来编辑" />
+			<p>msg is:{{message}}</p>
+		</div>
+		
+		<div id="myapp3">
+			<h1>表单的复选框</h1>
+			<input type="checkbox" id="生化危机7" value="生化危机7" v-model="ckeckedGames"/>
+			<label for="生化危机7">生化危机7</label>
+			<input type="checkbox" id="模拟飞行" value="模拟飞行" v-model="ckeckedGames"/>
+			<label for="模拟飞行">模拟飞行</label>
+			<input type="checkbox" id="塞尔达" value="塞尔达" v-model="ckeckedGames"/>
+			<label for="塞尔达">塞尔达</label>
+			<br />
+			<p>
+				你选择的游戏是：{{ckeckedGames}}
+			</p>
+		</div>
+		<div id="myapp4">
+			<h1>表单单选按钮</h1>
+			<h3>选择性别</h3>
+			<input type="radio"id="male"value="男" v-model="pickedSex"/>
+			<label for="male">男</label>
+			<input type="radio"id="female"value="女" v-model="pickedSex"/>
+			<label for="female">女</label>
+			<h3>选择爱好</h3>
+			<input type="radio"id="game"value="玩游戏" v-model="pickedHobby"/>
+			<label for="game">玩游戏</label>
+			<input type="radio"id="movie"value="看电影" v-model="pickedHobby"/>
+			<label for="movie">看电影</label>
+			
+			<h3>选择结果</h3>
+			<p>性别：{{pickedSex}}</p>
+			<p>爱好：{{pickedHobby}}</p>
+			
+		</div>
+		
+		<div id="myapp5">
+			<h3>你最喜欢的NBA：</h3>
+			<select v-model="likedNBAStar"  name="" id="" style="width: 210px;">
+				<option value="1">1</option>
+				<option value="1">2</option>
+				<option value="1">3</option>
+				<option value="1">4</option>
+				<option value="1">5</option>
+				<option value="1">6</option>
+				<option value="1">7</option>
+				<option value="1">8</option>
+				
+			</select>
+			<h3>我的全明星</h3>
+			<select v-model="likedNBAStars" multiple name="" id="" style="width: 210px;height：200px">
+				<option value="1">1</option>
+				<option value="1">2</option>
+				<option value="1">3</option>
+				<option value="1">4</option>
+				<option value="1">5</option>
+				<option value="1">6</option>
+				<option value="1">7</option>
+				<option value="1">8</option>
+				
+			</select>
+			<h3>选择结果</h3>
+			<p>你最喜欢的NBA：{{ likedNBAStar }}</p>
+			<p>我的选择：{{ likedNBAStars }}</p>
+		</div>
+		<div id="myapp6">
+			<!--。lazy,number,trim-->
+			<h3>表单修饰符</h3>
+			<div>
+				<label for="username">用户：</label>
+				<input type="text" id="username" v-model.lazy="username"@change="checkUsername" />
+				<span v-if="checkUsernameOK">可注册</span>
+			</div>
+			<div>
+				<label for="age">年龄：</label>
+				<input type="number" id="age" v-model.lazy.number="age"/>
+				
+			</div>
+			<div>
+				<label for="content">个人简介：</label><br />
+				<textarea id="content" v-model.trim="content"cols="55" row="8"/></textarea>
+				
+			</div>
+			<h4>信息区</h4>
+			<p>{{username}}</p>
+			<p>{{age}}</p>
+			<p><pre>{{content}}</pre></p>
+			
+	</body>
+	<script src="js/vue.js"></script>
+	<script type="text/javascript">
+		var myapp = new Vue({
+			el: "#myapp",
+			data: {
+				mygame: {
+					title: "乌贼2带",
+					price: 360,
+					pubdate: "2017年夏季",
+
+				},
+			}
+		})
+
+		var myapp1 = new Vue({
+			el: "#myapp1",
+			data: {},
+			methods: {
+				txtKeyup: function(event) {
+					this.debuglog(event)
+				},
+				btnClick: function(event) {
+					this.debuglog(event)
+				},
+				debuglog: function(event) {
+					console.log(
+						event.srcElement.tagName,
+						event.srcElement.id,
+						event.srcElement.innerHTML,
+						event.key ? event.key : "",
+					)
+				},
+			}
+		})
+
+		var myapp2 = new Vue({
+			el: "#myapp2",
+			data: {
+				message: "我爱马里奥",
+			},
+			methods: {},
+		})
+		var myapp3 = new Vue({
+			el: "#myapp3",
+			data: {
+				ckeckedGames:[],
+			},
+			methods: {},
+		})
+		var myapp4 = new Vue({
+			el: "#myapp4",
+			data: {
+				pickedSex:"",
+				pickedHobby:"",
+				
+			},
+			methods: {},
+		})
+		var myapp5 = new Vue({
+			el: "#myapp5",
+			data: {
+				likedNBAStar:null,
+				likedNBAStars:[],
+				
+			},
+			methods: {},
+		})
+		var myapp6 = new Vue({
+			el: "#myapp6",
+			data: {
+				username:"",
+				checkUsernameOK:false,
+				age:"",
+				content:""
+				
+			},
+			methods: {
+				checkUsername:function(){
+					if(this.username.length>0)this.checkUsernameOK = true;
+					else this.checkUsernameOK = false;
+				}
+			},
+		})
+	</script>
+
+</html>
