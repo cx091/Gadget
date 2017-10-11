@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<style type="text/css">
+	body{
+		height:100%;
+	}
+
+	.container1{
+		width: 100%;
+		height: 800px;
+		transition: all 2s;
+		position: relative;
+		animation: bg 10s infinite ;
+		background: #000;
+		perspective:800px;
+	}
+	.container{
+		padding-top:400px;
+		transform-origin:50% 50%;
+		transform-style:preserve-3d;
+		transition: all 2s;
+		position:absolute;
+		
+		left: 50%;
+		
+		
+	}
+	img{
+		width: 200px;
+		
+		position: absolute;
+		transition: all 3s;
+		margin-left: -100px;
+		
+	}
+	/*.container:hover img:nth-child(1){*/
+		/*transform:scale(1.5);*/
+	/*}*/
+	/*.container:hover img:nth-child(2){*/
+		/*transform:rotateZ(-15deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(3){*/
+		/*transform:rotateZ(-10deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(4){*/
+		/*transform:rotateZ(-5deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(5) {*/
+		/*transform:rotateZ(-20deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(6){*/
+		/*transform:rotateZ-5deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(7){*/
+		/*transform:rotateZ(10deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(8){*/
+		/*transform:rotateZ(15deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(9){*/
+		/*transform:rotateZ(20deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(10){*/
+		/*transform:scale(1.5);*/
+	/*}*/
+	/*.container:hover img:nth-child(11){*/
+		/*transform:rotateZ(-15deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(12){*/
+		/*transform:rotateZ(-10deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(13){*/
+		/*transform:rotateZ(-5deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(14) {*/
+		/*transform:rotateZ(-20deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(15){*/
+		/*transform:rotateZ-5deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(16){*/
+		/*transform:rotateZ(10deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(17){*/
+		/*transform:rotateZ(15deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(18){*/
+		/*transform:rotateZ(20deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(19){*/
+		/*transform:scale(1.5);*/
+	/*}*/
+	/*.container:hover img:nth-child(20){*/
+		/*transform:rotateZ(-15deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(21){*/
+		/*transform:rotateZ(-10deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(22){*/
+		/*transform:rotateZ(-5deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(23) {*/
+		/*transform:rotateZ(-20deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(24){*/
+		/*transform:rotateZ-5deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(25){*/
+		/*transform:rotateZ(10deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(26){*/
+		/*transform:rotateZ(15deg);*/
+	/*}*/
+	/*.container:hover img:nth-child(27){*/
+		/*transform:rotateZ(20deg);*/
+	/*}*/
+
+	/*.container:hover img:hover{
+		animation: spin 5s linear infinite;
+	}*/
+	.container:hover .img1:nth-child(1){
+		transform:rotateY(40deg)  translateZ(400px);
+	}
+	.container:hover .img1:nth-child(2){
+		transform:rotateY(80deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(3){
+		transform:rotateY(120deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(4){
+		transform:rotateY(160deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(5){
+		transform:rotateY(200deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(6){
+		transform:rotateY(240deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(7){
+		transform:rotateY(280deg) translateZ(400px);
+	} 
+	.container:hover .img1:nth-child(8){
+		transform:rotateY(320deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(9){
+		transform:rotateY(360deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(10){
+		transform:rotateY(40deg) rotateX(40deg)  translateZ(400px);
+	}
+	.container:hover .img1:nth-child(11){
+		transform:rotateY(80deg) rotateX(40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(12){
+		transform:rotateY(120deg) rotateX(40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(13){
+		transform:rotateY(160deg) rotateX(40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(14){
+		transform:rotateY(200deg) rotateX(40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(15){
+		transform:rotateY(240deg) rotateX(40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(16){
+		transform:rotateY(280deg) rotateX(40deg) translateZ(400px);
+	} 
+	.container:hover .img1:nth-child(17){
+		transform:rotateY(320deg) rotateX(40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(18){
+		transform:rotateY(360deg) rotateX(40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(19){
+		transform:rotateY(40deg) rotateX(-40deg)  translateZ(400px);
+	}
+	.container:hover .img1:nth-child(20){
+		transform:rotateY(80deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(21){
+		transform:rotateY(120deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(22){
+		transform:rotateY(160deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(23){
+		transform:rotateY(200deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(24){
+		transform:rotateY(240deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(25){
+		transform:rotateY(280deg) rotateX(-40deg) translateZ(400px);
+	} 
+	.container:hover .img1:nth-child(26){
+		transform:rotateY(320deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(27){
+		transform:rotateY(360deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(26){
+		transform:rotateY(320deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(27){
+		transform:rotateY(360deg) rotateX(-40deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(28){
+		transform: rotateX(90deg) translateZ(400px);
+	}
+	.container:hover .img1:nth-child(29){
+		transform:rotateY(90deg) rotateX(-90deg) translateZ(400px);
+	}
+	.img0{
+		transform:rotateY(0) rotateX(0) translateZ(0);
+	}
+	 .myMusic{
+        display: block;
+        width: 55px;
+        height: 55px;
+        border-radius: 100%;
+        position:absolute;
+    }
+    .myMusic:after{
+        display: block;
+        content: '南';
+        width: 55px;
+        height: 55px;
+        font-family: 'FontIcon';
+        text-align: center;
+        font-size: 25px;
+        line-height: 55px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .myMusic .circle{
+    	background: #fff;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: 5px solid rgba(0,0,0,0);
+        border-top-color: #000;
+        border-bottom-color: #000;
+        position: absolute;
+        left: 0;
+        box-shadow: 0 0 35px #000;
+    }
+    .play{
+        -webkit-animation: Circle 1s ease-in-out infinite;
+        animation: Circle 1s ease-in-out infinite;
+    }
+    .pause{
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+    }
+    @-webkit-keyframes Circle {
+        from{ -webkit-transform: rotate(0deg);}
+        to{-webkit-transform: rotate(360deg);}
+    }
+    @keyframes Circle {
+        from{transform: rotate(0deg);}
+        to{transform: rotate(360deg);}
+    }
+    @keyframes bg {
+        0%{background: url(images/1.jpg)  no-repeat;
+		background-size:100% 100%;
+		}
+        20%{background: url(images/2.jpg) no-repeat;background-size:100%;}
+        40%{background: url(images/3.jpg) no-repeat;background-size:100%;}
+        60%{background: url(images/4.jpg)no-repeat;background-size:100%;}
+        80%{background: url(images/5.jpg) no-repeat;background-size:100% ;}
+        100%{background: url(images/1.jpg) no-repeat;background-size:100% ;}
+        
+    }
+</style>
+<body>
+<div class="bg" ></div>
+	<div class="container1">
+		<div class="container">
+			<img  src="images/1.jpg" alt="">
+			<img  src="images/2.jpg" alt="">
+			<img  src="images/3.jpg" alt="">
+			<img  src="images/4.jpg" alt="">
+			<img  src="images/5.jpg" alt="">
+			<img  src="images/6.jpg" alt="">
+			<img  src="images/7.jpg" alt="">
+			<img  src="images/8.jpg" alt="">
+			<img  src="images/9.jpg" alt="">
+			<img  src="images/1.jpg" alt="">
+			<img  src="images/2.jpg" alt="">
+			<img  src="images/3.jpg" alt="">
+			<img  src="images/4.jpg" alt="">
+			<img  src="images/5.jpg" alt="">
+			<img  src="images/6.jpg" alt="">
+			<img  src="images/7.jpg" alt="">
+			<img  src="images/8.jpg" alt="">
+			<img  src="images/9.jpg" alt="">
+			<img  src="images/1.jpg" alt="">
+			<img  src="images/2.jpg" alt="">
+			<img  src="images/3.jpg" alt="">
+			<img  src="images/4.jpg" alt="">
+			<img  src="images/5.jpg" alt="">
+			<img  src="images/6.jpg" alt="">
+			<img  src="images/7.jpg" alt="">
+			<img  src="images/8.jpg" alt="">
+			<img  src="images/9.jpg" alt="">
+			<img  src="images/8.jpg" alt="">
+			<img  src="images/9.jpg" alt="">
+
+		</div>
+			
+			
+			<a class="myMusic" title="让我们荡起双桨">
+   			 <span class="circle play"></span>
+			</a>
+		</div>
+	
+
+</body>
+<script type="text/javascript">
+	$(function(){
+		$("img").click(function(){
+			// $(this).each(function(index,element){
+				
+				if ($("img").hasClass("img1")) {
+					$("img").removeClass("img1");
+					$("img").addClass("img0");
+				}else{
+					$("img").removeClass("img0");
+					$("img").addClass("img1");
+
+				}
+			// })
+		})
+	})
+	var musicSrc = '南征北战 - 我的天空.mp3';
+    var audio = null;
+    function setAudio(){
+        audio = document.createElement('audio');
+        audio.src = musicSrc;
+        if(!audio){
+            audio.load(); //加载音乐
+        }else{
+            audio.play();
+            audio.loop = true; //循环播放
+        }
+    }
+    var musicBtn  = $('.myMusic');
+    var $music = musicBtn.find('.circle');
+    //控制
+    musicBtn.off().on('click',function(){
+        if($music.hasClass('play')){ //如果已经播放，则暂停
+            audio && (audio.pause());
+            $music.addClass('pause').removeClass('play');
+        }else{
+            audio && (audio.play());
+            $music.addClass('play').removeClass('pause');
+        }
+    });
+    //页面加载后执行
+    window.onload = function(){
+        setAudio();
+    }
+    $(function(){
+			var deg=40;
+			var i=0;
+				// if ($("img").className=="img1") {
+				
+				$(document).bind('mousemove',function(e){
+      				 // $("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+      				 $(".container").css("transform","rotateY("+(e.pageX)+"deg)");
+   				});
+				
+			
+			
+			// }
+		})
+</script>
+</html>
